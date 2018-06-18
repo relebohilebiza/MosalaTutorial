@@ -1,0 +1,31 @@
+﻿@using MosalaSchool.Models
+@model IEnumerable<Student>
+@{
+    ViewBag.Title = "Home";
+}
+
+<br />
+
+<table class="table table-bordered" >
+    <thead>
+        <tr>
+            <th >@Html.DisplayNameFor(m => m.FirstName)</th>
+            <th>@Html.DisplayNameFor(m => m.LastName)</th>
+            <th>@Html.DisplayNameFor(m => m.EnrollmentDate)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(M => student.FirstName)</td>
+            <td>@Html.DisplayFor(M => student.LastName)</td>
+            <td>@Html.DisplayFor(M => student.EnrollmentDate)</td>
+            <td class="btn-default">@Html.ActionLink("Details","Details",new { id= student.ID})</td>
+        </tr>
+       
+    }
+
+    </tbody>
+</table>
+

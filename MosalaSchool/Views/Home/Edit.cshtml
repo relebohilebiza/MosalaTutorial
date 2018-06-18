@@ -1,0 +1,16 @@
+﻿@model MosalaSchool.Models.Student
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<h6>@Html.DisplayNameFor(m => m.FirstName): @Html.EditorFor(m => m.FirstName)</h6>
+<h6>@Html.DisplayNameFor(m => m.LastName): @Html.EditorFor(m => m.LastName)</h6>
+<h6>@Html.DisplayNameFor(m => m.EnrollmentDate): @Html.EditorFor(m => m.EnrollmentDate)</h6>
+<input type="submit" value="Update" />
+}

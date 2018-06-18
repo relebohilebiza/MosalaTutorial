@@ -1,0 +1,41 @@
+﻿@model MosalaSchool.Models.Student
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<h6>First Name: @Html.DisplayFor(model => model.FirstName)</h6>
+<h6>Last Name: @Html.DisplayFor(model => model.LastName)</h6>
+<h6>Date Registered: @Html.DisplayFor(model => model.EnrollmentDate)</h6>
+<dl><dd>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model.Enrollments)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => student.Course.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => student.Grade)
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+
+</dd></dl>
+
+<p>@Html.ActionLink("Back to List", "Index") |@Html.ActionLink("Edit", "Edit", new {id= Model.ID})</p>
